@@ -28,7 +28,7 @@ These projects are deployed via [Vercel](https://vercel.com), each using its own
 - [Next.js](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [ShadCN/UI](https://ui.shadcn.com/) (where used)
+- [ShadCN/UI](https://ui.shadcn.com/)
 - Vercel hosting & CI/CD
 
 ##  Environment Variables
