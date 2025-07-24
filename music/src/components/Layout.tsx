@@ -3,7 +3,6 @@
 import { NavigationMenu } from "@/components/ui/navigation-menu";
 import { NavigationMenuList } from "@/components/ui/navigation-menu";
 import { NavigationMenuItem } from "@/components/ui/navigation-menu";
-import { Sheet } from "@/components/ui/sheet";
 import { ReactNode, useEffect, useState } from "react";
 import Head from "next/head";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -26,16 +25,16 @@ export default function Layout({
   description = "Saxophonist, Composer, Educator",
 }: LayoutProps) {
   const [mounted, setMounted] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+//   const [scrolled, setScrolled] = useState(false);
   useEffect(() => setMounted(true), []);
 
-  useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 100);
-    };
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+//   useEffect(() => {
+//     const onScroll = () => {
+//       setScrolled(window.scrollY > 100);
+//     };
+//     window.addEventListener("scroll", onScroll);
+//     return () => window.removeEventListener("scroll", onScroll);
+//   }, []);
 
   const { scrollY } = useScroll();
   const heroLogoScale = useTransform(scrollY, [0, 300], [1, 0.25]);

@@ -9,7 +9,7 @@ export default function ConsultationPage() {
         </Head>
         {/* <Layout> */}
           <h1>Chat with me</h1>
-          <p>Tell me why you're ready to improve your saxophone skills...</p>
+          <p>Tell me why you&apos;re ready to improve your saxophone skills...</p>
           {/* <ContactForm /> */}
         {/* </Layout> */}
       </>
