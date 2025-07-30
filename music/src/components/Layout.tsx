@@ -10,8 +10,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
-
-// layout component
+import { TestimonialSection } from "./sections/TestimonialSection";
 
 type LayoutProps = {
   children: ReactNode;
@@ -25,16 +24,7 @@ export default function Layout({
   description = "Saxophonist, Composer, Educator",
 }: LayoutProps) {
   const [mounted, setMounted] = useState(false);
-//   const [scrolled, setScrolled] = useState(false);
   useEffect(() => setMounted(true), []);
-
-//   useEffect(() => {
-//     const onScroll = () => {
-//       setScrolled(window.scrollY > 100);
-//     };
-//     window.addEventListener("scroll", onScroll);
-//     return () => window.removeEventListener("scroll", onScroll);
-//   }, []);
 
   const { scrollY } = useScroll();
   const heroLogoScale = useTransform(scrollY, [0, 300], [1, 0.25]);
@@ -44,7 +34,7 @@ export default function Layout({
   const heroGlowOpacity = useTransform(scrollY, [0, 300], [1, 0]);
   const navLogoOpacity = useTransform(scrollY, [100, 250], [0, 1]);
   const navLogoScale = useTransform(scrollY, [100, 250], [0.3, 1]);
-  const navLogoGlowScale = useTransform(scrollY, [0, 300], [0, 0.6]);
+  const navLogoGlowScale = useTransform(scrollY, [0, 300], [0, 0.4]);
   const navLogoGlowOpacity = useTransform(scrollY, [0, 300], [0, 1]);
   const navShift = useTransform(scrollY, [100, 250], [-125, 1]);
   const navShiftNeg = useTransform(scrollY, [100, 250], [125, -1]);
@@ -192,9 +182,30 @@ export default function Layout({
         <main className="flex-1">{children}</main>
 
         {/* Footer */}
-        <footer className="absolute bottom-0 z-20 w-full flex justify-center pb-6 text-md text-amber-200/80">
-          © {new Date().getFullYear()} Jason James Moore. All rights reserved.
-        </footer>
+        <footer className="py-10 px-6 md:px-12 bg-neutral-900 text-white">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+        <TestimonialSection/>
+        <div className="text-center md:text-right">
+          <p className="text-sm">&copy; {new Date().getFullYear()} Jason James Moore. All rights reserved.</p>
+          <div className="mt-4 flex justify-center md:justify-end gap-4 text-xl">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <FaInstagram />
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <FaFacebook />
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <FaTwitter />
+            </a>
+          </div>
+          <div className="mt-6">
+            <Button asChild className="text-base font-medium bg-amber-200/70 text-black hover:bg-amber-200">
+              <Link href="/consultation">Schedule a Free Consultation</Link>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </footer>
       </div>
     </>
   );
