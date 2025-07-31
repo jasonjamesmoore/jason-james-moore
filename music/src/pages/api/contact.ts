@@ -1,0 +1,38 @@
+// pages/api/contact.ts
+import { Resend } from 'resend';
+import { z } from 'zod';
+import type { NextApiRequest, NextApiResponse } from 'next';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+const ContactSchema = z.object({
+  firstName: z.string().min(1),
+  lastName: z.string().min(1),
+  email: z.string().email(),
+  message: z.string().min(10),
+});
+
+export default async function handler(req: NextApiRequest, res:NextApiResponse) {
+  if (req.method !== 'POST') return res.status(405).end();
+
+  try {
+    const data = ContactSchema.parse(req.body);
+
+    await resend.emails.send({
+      from: 'Contact Form <your@email.com>', // Must be verified in Resend
+      to: 'you@yourdomain.com',
+      subject: 'New Contact Form Submission',
+      text: `
+        Name: ${data.firstName} ${data.lastName}
+        Email: ${data.email}
+        Message:
+        ${data.message}
+      `,
+    });
+
+    return res.status(200).json({ success: true });
+  } catch (error) {
+    console.error(error);
+    return res.status(400).json({ error: 'Invalid submission or email failure.' });
+  }
+}

@@ -1,5 +1,3 @@
-// END OF SCROLL LAYOUT
-// import { Sidebar } from "@/components/ui/sidebar";
 import { NavigationMenu } from "@/components/ui/navigation-menu";
 import { NavigationMenuList } from "@/components/ui/navigation-menu";
 import { NavigationMenuItem } from "@/components/ui/navigation-menu";
@@ -10,7 +8,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
-import { TestimonialSection } from "./sections/TestimonialSection";
 
 type LayoutProps = {
   children: ReactNode;
@@ -18,7 +15,7 @@ type LayoutProps = {
   description?: string;
 };
 
-export default function Layout({
+export default function AnimatedLayout({
   children,
   title = "Jason James Moore | Music",
   description = "Saxophonist, Composer, Educator",
@@ -38,6 +35,13 @@ export default function Layout({
   const navLogoGlowOpacity = useTransform(scrollY, [0, 300], [0, 1]);
   const navShift = useTransform(scrollY, [100, 250], [-125, 1]);
   const navShiftNeg = useTransform(scrollY, [100, 250], [125, -1]);
+  const navBgOpacity = useTransform(scrollY, [500, 820], [0, 0.8]);
+  const navBlur = useTransform(scrollY, [500, 820], [0, 8]); // px of blur
+  const navBackground = useTransform(
+    navBgOpacity,
+    (o) => `rgba(23, 23, 23, ${o})`
+  );
+  const navBlurFilter = useTransform(navBlur, (b) => `blur(${b}px)`);
 
   if (!mounted) return null;
 
@@ -50,9 +54,15 @@ export default function Layout({
       </Head>
       <div className="relative min-h-screen flex flex-col bg-background text-foreground">
         {/* Navigation */}
-        <header
+
+        <motion.header
           role="banner"
-          className="fixed top-0 z-40 w-full px-6 py-4 bg-transparent"
+          style={{
+            backgroundColor: navBackground, // neutral-900 base
+            backdropFilter: navBlurFilter,
+            WebkitBackdropFilter: navBlurFilter, // for Safari
+          }}
+          className="fixed top-0 z-40 w-full px-6 py-4 transition-all duration-300"
         >
           <div className="hidden md:flex items-center justify-center w-full max-w-7xl mx-auto gap-7">
             {/* Left Nav */}
@@ -67,7 +77,7 @@ export default function Layout({
                       <Link href="/music">Music</Link>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                      <Link href="/lessons">Lessons</Link>
+                      <Link href="/saxophone-lessons">Lessons</Link>
                     </NavigationMenuItem>
                   </NavigationMenuList>
                 </NavigationMenu>
@@ -100,17 +110,18 @@ export default function Layout({
 
             {/* Right Nav */}
             <motion.div style={{ x: navShift }}>
-              <div className="flex items-center gap-6 text-white text-xl font-medium">
+              <div className="flex items-center gap-6 text-xl font-medium">
                 <div className="pl-2">
                   <Button className="text-lg font-medium bg-amber-200/70 text-black hover:bg-amber-200">
-                    Free Consultation
+                    <Link href="/consultation">Free Consultation</Link>
                   </Button>
                 </div>
-                <div className="flex gap-4 text-white text-xl">
+                <div className="flex gap-4 text-amber-200/70 text-xl">
                   <Link
                     href="https://instagram.com"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="hover:text-amber-200"
                   >
                     <FaInstagram />
                   </Link>
@@ -118,6 +129,7 @@ export default function Layout({
                     href="https://facebook.com"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="hover:text-amber-200"
                   >
                     <FaFacebook />
                   </Link>
@@ -125,6 +137,7 @@ export default function Layout({
                     href="https://twitter.com"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="hover:text-amber-200"
                   >
                     <FaTwitter />
                   </Link>
@@ -148,7 +161,7 @@ export default function Layout({
             <div className="flex gap-4 text-sm font-medium text-amber-200">
               <Link href="/contact">Contact</Link>
               <Link href="/music">Music</Link>
-              <Link href="/lessons">Lessons</Link>
+              <Link href="/saxophone-lessons">Lessons</Link>
             </div>
           </div>
 
@@ -159,53 +172,74 @@ export default function Layout({
               y: heroLogoY,
               opacity: heroLogoOpacity,
             }}
-            className="hidden md:block fixed top-[8%] left-[5%] z-30 w-[400px] h-[240px] md:w-[700px] md:h-[420px]"
+            className="hidden md:block fixed top-[8%] left-[5%] z-10 w-[400px] h-[240px] md:w-[700px] md:h-[420px] pointer-events-none"
           >
             <motion.div
               style={{ scale: heroGlowScale, opacity: heroGlowOpacity }}
               className="absolute left-1/2 top-1/2 w-[800px] h-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-radial from-orange-400/60 via-red-500/20 to-transparent blur-3xl z-0 pointer-events-none"
             />
-            <Link href="/" className="block">
+            <div className="relative z-0 pointer-events-none">
               <Image
                 src="/JJM-logo.png"
                 alt="Jason James Moore Logo"
                 width={700}
                 height={420}
-                className="relative z-10 object-contain drop-shadow-[0_1px_2px_rgba(103,140,232,1.000)]"
+                className="object-contain drop-shadow-[0_1px_2px_rgba(103,140,232,1.000)]"
                 priority
               />
-            </Link>
+            </div>
           </motion.div>
-        </header>
+        </motion.header>
 
         {/* Main Content */}
         <main className="flex-1">{children}</main>
 
         {/* Footer */}
-        <footer className="py-10 px-6 md:px-12 bg-neutral-900 text-white">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
-        <TestimonialSection/>
-        <div className="text-center md:text-right">
-          <p className="text-sm">&copy; {new Date().getFullYear()} Jason James Moore. All rights reserved.</p>
-          <div className="mt-4 flex justify-center md:justify-end gap-4 text-xl">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <FaInstagram />
-            </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-              <FaFacebook />
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-              <FaTwitter />
-            </a>
-          </div>
-          <div className="mt-6">
-            <Button asChild className="text-base font-medium bg-amber-200/70 text-black hover:bg-amber-200">
+        <footer className="py-10 px-6 md:px-12 bg-gradient-to-t from-neutral-950 via-neutral-900 to-neutral-800 text-muted-foreground">
+          <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+            {/* Left: Copyright */}
+            <p className="text-md">
+              &copy; {new Date().getFullYear()} Jason James Moore. All rights
+              reserved.
+            </p>
+
+            {/* Center: Social Icons */}
+            <div className="flex gap-4 text-xl">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <FaInstagram />
+              </a>
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+              >
+                <FaFacebook />
+              </a>
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter"
+              >
+                <FaTwitter />
+              </a>
+            </div>
+
+            {/* Right: CTA Button */}
+            <Button
+              asChild
+              className="text-base font-medium bg-amber-200/70 text-black hover:bg-amber-200"
+            >
               <Link href="/consultation">Schedule a Free Consultation</Link>
             </Button>
           </div>
-        </div>
-      </div>
-    </footer>
+        </footer>
       </div>
     </>
   );
