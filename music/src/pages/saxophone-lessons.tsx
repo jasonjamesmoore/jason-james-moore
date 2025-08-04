@@ -33,10 +33,10 @@ export default function LessonsPage() {
   return (
     <>
       <Head>
-        <title>Saxophone Lessons | Jason James Moore</title>
+        <title>Saxophone Lessons | Wilmington NC & Online</title>
         <meta
           name="description"
-          content="Take saxophone lessons in Wilmington, NC or online with Jason James Moore. Group classes, private lessons, and custom practice plans available."
+          content="Explore saxophone lessons: tone, improvisation, technique, theory. Private lessons, group sessions, and monthly mentorship available."
         />
       </Head>
 

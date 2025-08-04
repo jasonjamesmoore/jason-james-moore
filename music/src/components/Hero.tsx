@@ -18,9 +18,9 @@ export function Hero() {
       
       {/* Text Block aligned to logo center */}
       <div className="absolute top-[calc(8%+440px)] left-[5%] w-[700px] max-w-full z-10 px-6">
-        <p className="text-2xl text-amber-200/70 text-center">
+        <h1 className="text-2xl text-amber-200/70 text-center">
           Saxophonist • Composer • Educator
-        </p>
+        </h1>
       </div>
     </section>
   );

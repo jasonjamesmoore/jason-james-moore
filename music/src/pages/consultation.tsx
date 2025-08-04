@@ -20,10 +20,10 @@ export default function ConsultationPage() {
   return (
     <>
       <Head>
-        <title>Free Saxophone Consultation | Jason James Moore</title>
+        <title>Free Saxophone Consultation | Start Your Musical Journey</title>
         <meta
           name="description"
-          content="Book a free consultation to explore saxophone lessons in Wilmington, NC or online."
+          content="Schedule a free consultation with saxophonist Jason James Moore to explore saxophone lessons in Wilmington, NC or online."
         />
       </Head>
 
@@ -32,7 +32,7 @@ export default function ConsultationPage() {
           {/* Left: Text */}
           <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left">
             <h1 className="text-5xl [@media(min-width:795px)]:text-6xl font-serif font-bold ">
-              Chat with me
+              Let's Chat about Saxophone Lessons
             </h1>
             <h2 className="text-2xl font-semibold text-neutral-800">
               Book a Free Consultation
