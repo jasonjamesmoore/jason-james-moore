@@ -129,7 +129,7 @@ export default function LandingPage() {
             </motion.div>
             <motion.a
               href="https://dev.jasonjamesmoore.com"
-              className="relative z-20 px-6 py-3 text-2xl font-medium text-amber-300 text-shadow-lg text-shadow-[#6f6658]"
+              className="relative z-20 px-6 py-3 text-2xl font-medium text-amber-200 text-shadow-lg text-shadow-[#6f6658]"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
