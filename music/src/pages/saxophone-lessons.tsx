@@ -12,7 +12,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@radix-ui/react-collapsible";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, ChevronDown } from "lucide-react";
 
 export default function LessonsPage() {
   const embedRef = useRef<HTMLDivElement>(null);
@@ -74,6 +74,11 @@ export default function LessonsPage() {
                 with others.
               </li>
             </ul>
+            <div className="flex items-center gap-2">
+              <ChevronDown />
+              <h2 className="text-3xl text-amber-400 text-shadow-black text-shadow-md">Schedule Lessons Below</h2>
+              <ChevronDown />
+            </div>
           </div>
 
           {/* Right image */}
@@ -94,7 +99,7 @@ export default function LessonsPage() {
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <CollapsibleTrigger className="text-4xl cursor-pointer flex items-center gap-2 hover:text-indigo-800 transition-colors duration-200">
+                  <CollapsibleTrigger className="text-4xl cursor-pointer flex items-center gap-2 hover:text-amber-400 hover:text-shadow-black hover:text-shadow-md transition-colors duration-200">
                     <ChevronRight className="transition-transform duration-300 h-8 w-8 group-data-[state=open]:rotate-90" />
                     Common topics of study:
                   </CollapsibleTrigger>
@@ -137,7 +142,11 @@ export default function LessonsPage() {
 
         {/* Scheduler Embed */}
         <div className="mt-20 tidycal-embed-wrapper max-w-5xl mx-auto">
-          <div ref={embedRef} className="tidycal-embed" data-path="moorejasonj"/>
+          <div
+            ref={embedRef}
+            className="tidycal-embed"
+            data-path="moorejasonj"
+          />
         </div>
       </section>
     </>
