@@ -36,10 +36,28 @@ export function ContactForm() {
     },
   });
 
-  const onSubmit = (values: ContactFormValues) => {
-    console.log("Submitted:", values);
-    // TODO: send to API or third-party service
-  };
+  const onSubmit = async (values: ContactFormValues) => {
+  try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(values),
+    });
+
+    const result = await res.json();
+
+    if (result.success) {
+      alert("Your message has been sent!");
+      form.reset();
+    } else {
+      alert("Something went wrong. Please try again.");
+    }
+  } catch (err) {
+    console.error(err);
+    alert("Failed to send message.");
+  }
+};
+
 
   return (
     <Form {...form}>

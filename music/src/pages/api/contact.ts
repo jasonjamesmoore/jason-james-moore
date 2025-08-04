@@ -19,8 +19,8 @@ export default async function handler(req: NextApiRequest, res:NextApiResponse) 
     const data = ContactSchema.parse(req.body);
 
     await resend.emails.send({
-      from: 'Contact Form <your@email.com>', // Must be verified in Resend
-      to: 'you@yourdomain.com',
+      from: 'Contact Form <contact@jasonjamesmoore.com>', // Must be verified in Resend
+      to: process.env.CONTACT_RECEIVER_EMAIL!,
       subject: 'New Contact Form Submission',
       text: `
         Name: ${data.firstName} ${data.lastName}
@@ -29,10 +29,11 @@ export default async function handler(req: NextApiRequest, res:NextApiResponse) 
         ${data.message}
       `,
     });
+    
 
     return res.status(200).json({ success: true });
-  } catch (error) {
-    console.error(error);
+  } catch (error: any) {
+    console.error('❌ Email failed:', error?.message || error);
     return res.status(400).json({ error: 'Invalid submission or email failure.' });
   }
 }

@@ -1,22 +1,137 @@
-import Head from 'next/head';
+import Head from "next/head";
+import { useEffect } from "react";
+import Image from "next/image";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@radix-ui/react-collapsible";
+import { ChevronRight } from "lucide-react";
 
 export default function LessonsPage() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://asset-tidycal.b-cdn.net/js/embed.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+
   return (
     <>
       <Head>
         <title>Saxophone Lessons | Jason James Moore</title>
-        <meta name="description" content="Private saxophone lessons in Wilmington, NC with Jason James Moore." />
+        <meta
+          name="description"
+          content="Take saxophone lessons in Wilmington, NC or online with Jason James Moore. Group classes, private lessons, and custom practice plans available."
+        />
       </Head>
-      <main className="px-6 py-20 md:px-12 bg-gradient-to-b from-rose-100 via-indigo-100 to-white text-black">
-        <div className="max-w-3xl mx-auto text-center space-y-10">
-        <div className="space-y-4">
-        <h1 className="text-5xl md:text-6xl font-serif font-bold">Saxophone Lessons</h1>
-        <p className="text-lg md:text-xl">
-          I offer private saxophone lessons for all ages and levels in Wilmington, NC.
-        </p>
+
+      <section className="px-6 py-20 md:px-12 bg-gradient-to-b from-rose-100 via-indigo-100 to-white text-black">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+          {/* Left text content */}
+          <div className="space-y-6">
+            <h1 className="text-5xl md:text-6xl font-serif font-bold">
+              PRACTICE WITH ME
+            </h1>
+            <ul className="list-disc list-inside text-lg text-neutral-700 space-y-1">
+              <li>1:1 Private Lessons</li>
+              <li>Group Classes</li>
+              <li>Monthly Mentorship</li>
+            </ul>
+            <p className="text-lg">
+              I teach saxophone lessons at my home studio in Wilmington, NC and
+              over the internet via Zoom. These lessons are for you if you are:
+            </p>
+            <ul className="list-disc list-inside text-lg text-neutral-700 space-y-1">
+              <li>
+                <strong>Ready</strong> to jump right into ongoing, meaningful
+                lessons.
+              </li>
+              <li>
+                <strong>Curious</strong> about growing as a musician with
+                reflection and support.
+              </li>
+              <li>
+                <strong>Motivated</strong> to practice and see progress between
+                sessions.
+              </li>
+              <li>
+                <strong>Interested</strong> in building confidence and playing
+                with others.
+              </li>
+            </ul>
+          </div>
+
+          {/* Right image */}
+          <div className="w-full flex justify-center overflow-hidden">
+            <Image
+              src="/JasonBW.jpeg"
+              alt="Jason James Moore playing saxophone"
+              className="rounded-lg shadow-lg object-cover max-w-sm w-full"
+              width={903}
+              height={1208}
+            />
+          </div>
         </div>
+
+        {/* Accordion Component */}
+        <div className="max-w-5xl mx-auto mt-16 border-t-2 border-b-2 border-neutral-300 py-6">
+          <Collapsible className="group">
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <CollapsibleTrigger className="text-4xl cursor-pointer flex items-center gap-2 hover:text-indigo-800 transition-colors duration-200">
+                    <ChevronRight className="transition-transform duration-300 h-8 w-8 group-data-[state=open]:rotate-90" />
+                    Common topics of study:
+                  </CollapsibleTrigger>
+                </TooltipTrigger>
+                <TooltipContent>Click to explore topics!</TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+
+            {/* Collapsible Content goes here */}
+            <CollapsibleContent className="mt-4">
+              <ul className="space-y-2 list-disc list-inside">
+                <li>
+                  <strong>Tone Production</strong> (embouchure, air speed, long
+                  tones, etc.) - We chose saxophone lessons because we enjoy the
+                  sounds the instrument can make. Practicing this one aspect of
+                  playing alone will improve the whole experience!
+                </li>
+                <li>
+                  How to Learn and Memorize Songs and their Chord progressions!
+                </li>
+                <li>Scale Studies - singing and playing</li>
+                <li>Groove!</li>
+                <li>Creating a relationship with Diatonic Harmony</li>
+                <li>
+                  Improvising and Playing over Drones for harmonic context
+                </li>
+                <li>
+                  Experiencing first, then Explaining - Music Theory describes
+                  sound
+                </li>
+                <li>Writing solo etudes over jazz standards</li>
+                <li>Breathing Exercises</li>
+                <li>Transcribing</li>
+                <li>Developing personal vocabulary</li>
+                <li>Classical Saxophone literature</li>
+              </ul>
+            </CollapsibleContent>
+          </Collapsible>
         </div>
-      </main>
+
+        {/* Scheduler Embed */}
+        <div className="mt-20 tidycal-embed-wrapper max-w-5xl mx-auto">
+          <div className="tidycal-embed" data-path="moorejasonj"></div>
+        </div>
+      </section>
     </>
   );
 }

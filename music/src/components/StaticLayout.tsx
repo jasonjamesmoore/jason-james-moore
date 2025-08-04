@@ -30,7 +30,7 @@ export default function StaticLayout({
           role="banner"
           className="fixed top-0 z-40 w-full px-6 py-4 bg-neutral-900/80 backdrop-blur-md"
         >
-          <div className="hidden md:flex items-center justify-center w-full max-w-7xl mx-auto gap-7">
+          <div className="hidden [@media(min-width:795px)]:flex items-center justify-center w-full max-w-7xl mx-auto gap-7">
             {/* Left Nav */}
             <div className="flex items-center gap-6 text-amber-200/70 text-xl font-medium">
               <NavigationMenu>
@@ -49,7 +49,7 @@ export default function StaticLayout({
             </div>
 
             {/* Navbar Logo */}
-            <div className="relative z-30 w-[150px] h-[90px] md:w-[200px] md:h-[120px] flex items-center justify-center">
+            <div className="relative z-30 w-[150px] h-[90px] [@media(min-width:795px)]:w-[200px] [@media(min-width:795px)]:h-[120px] flex items-center justify-center">
               <Link href="/" className="block">
                 <Image
                   src="/JJM-logo.png"
@@ -99,7 +99,7 @@ export default function StaticLayout({
           </div>
 
           {/* Mobile Layout */}
-          <div className="flex md:hidden flex-col items-center gap-4">
+          <div className="flex [@media(min-width:795px)]:hidden flex-col items-center gap-4">
             <Link href="/">
               <Image
                 src="/JJM-logo.png"
@@ -122,8 +122,8 @@ export default function StaticLayout({
         <main className="flex-1 pt-28">{children}</main>
 
         {/* Footer */}
-        <footer className="py-10 px-6 md:px-12 bg-gradient-to-t from-neutral-950 via-neutral-900 to-neutral-800 text-muted-foreground">
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+        <footer className="py-10 px-6 [@media(min-width:795px)]:px-12 bg-gradient-to-t from-neutral-950 via-neutral-900 to-neutral-800 text-muted-foreground">
+          <div className="max-w-6xl mx-auto flex flex-col [@media(min-width:795px)]:flex-row justify-between items-center gap-6 text-center [@media(min-width:795px)]:text-left">
             <p className="text-md">
               &copy; {new Date().getFullYear()} Jason James Moore. All rights reserved.
             </p>

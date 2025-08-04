@@ -64,7 +64,7 @@ export default function AnimatedLayout({
           }}
           className="fixed top-0 z-40 w-full px-6 py-4 transition-all duration-300"
         >
-          <div className="hidden md:flex items-center justify-center w-full max-w-7xl mx-auto gap-7">
+          <div className="hidden [@media(min-width:795px)]:flex items-center justify-center w-full max-w-7xl mx-auto gap-7">
             {/* Left Nav */}
             <motion.div style={{ x: navShiftNeg }}>
               <div className="flex items-center gap-6 text-amber-200/70 text-xl font-medium">
@@ -87,7 +87,7 @@ export default function AnimatedLayout({
             {/* Navbar Logo */}
             <motion.div
               style={{ scale: navLogoScale, opacity: navLogoOpacity }}
-              className="relative z-30 w-[150px] h-[90px] md:w-[200px] md:h-[120px] flex items-center justify-center"
+              className="relative z-30 w-[150px] h-[90px] [@media(min-width:795px)]:w-[200px] [@media(min-width:795px)]:h-[120px] flex items-center justify-center"
             >
               <motion.div
                 style={{
@@ -147,7 +147,7 @@ export default function AnimatedLayout({
           </div>
 
           {/* Mobile (simple static layout) */}
-          <div className="flex md:hidden flex-col items-center gap-4">
+          <div className="flex [@media(min-width:795px)]:hidden flex-col items-center gap-4">
             <Link href="/">
               <Image
                 src="/JJM-logo.png"
@@ -172,7 +172,7 @@ export default function AnimatedLayout({
               y: heroLogoY,
               opacity: heroLogoOpacity,
             }}
-            className="hidden md:block fixed top-[8%] left-[5%] z-10 w-[400px] h-[240px] md:w-[700px] md:h-[420px] pointer-events-none"
+            className="hidden [@media(min-width:795px)]:block fixed top-[60%] left-[5%] z-10 w-[400px] h-[240px] [@media(min-width:795px)]:w-[700px] [@media(min-width:795px)]:h-[420px] pointer-events-none"
           >
             <motion.div
               style={{ scale: heroGlowScale, opacity: heroGlowOpacity }}
@@ -195,8 +195,8 @@ export default function AnimatedLayout({
         <main className="flex-1">{children}</main>
 
         {/* Footer */}
-        <footer className="py-10 px-6 md:px-12 bg-gradient-to-t from-neutral-950 via-neutral-900 to-neutral-800 text-muted-foreground">
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+        <footer className="py-10 px-6 [@media(min-width:795px)]:px-12 bg-gradient-to-t from-neutral-950 via-neutral-900 to-neutral-800 text-muted-foreground">
+          <div className="max-w-6xl mx-auto flex flex-col [@media(min-width:795px)]:flex-row justify-between items-center gap-6 text-center [@media(min-width:795px)]:text-left">
             {/* Left: Copyright */}
             <p className="text-md">
               &copy; {new Date().getFullYear()} Jason James Moore. All rights
