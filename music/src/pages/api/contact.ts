@@ -13,6 +13,7 @@ const ContactSchema = z.object({
 });
 
 export default async function handler(req: NextApiRequest, res:NextApiResponse) {
+  console.log("Received method:", req.method);
   if (req.method !== 'POST') return res.status(405).end();
 
   try {
@@ -40,5 +41,4 @@ export default async function handler(req: NextApiRequest, res:NextApiResponse) 
   }
   return res.status(400).json({ error: 'Invalid submission or email failure.' });
 }
-console.log("🔍 Received method:", req.method);
 }
