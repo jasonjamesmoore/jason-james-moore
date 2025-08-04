@@ -32,8 +32,12 @@ export default async function handler(req: NextApiRequest, res:NextApiResponse) 
     
 
     return res.status(200).json({ success: true });
-  } catch (error: any) {
-    console.error('❌ Email failed:', error?.message || error);
-    return res.status(400).json({ error: 'Invalid submission or email failure.' });
+  } catch (error: unknown) {
+  if (error instanceof Error) {
+    console.error('❌ Email failed:', error.message);
+  } else {
+    console.error('❌ Email failed:', error);
   }
+  return res.status(400).json({ error: 'Invalid submission or email failure.' });
+}
 }
