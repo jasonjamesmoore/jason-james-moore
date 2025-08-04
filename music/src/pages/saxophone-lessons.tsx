@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import {
   Tooltip,
@@ -15,11 +15,19 @@ import {
 import { ChevronRight } from "lucide-react";
 
 export default function LessonsPage() {
+  const embedRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
+    if (!embedRef.current) return;
+
     const script = document.createElement("script");
     script.src = "https://asset-tidycal.b-cdn.net/js/embed.js";
     script.async = true;
     document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
   }, []);
 
   return (
@@ -129,7 +137,7 @@ export default function LessonsPage() {
 
         {/* Scheduler Embed */}
         <div className="mt-20 tidycal-embed-wrapper max-w-5xl mx-auto">
-          <div className="tidycal-embed" data-path="moorejasonj"></div>
+          <div ref={embedRef} className="tidycal-embed" data-path="moorejasonj"/>
         </div>
       </section>
     </>
