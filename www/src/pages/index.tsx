@@ -27,6 +27,7 @@ export default function LandingPage() {
             className="object-cover"
             priority
           />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#c5745b]/80 via-transparent to-transparent pointer-events-none" />
         </div>
 
         {/* logo with glow div */}
