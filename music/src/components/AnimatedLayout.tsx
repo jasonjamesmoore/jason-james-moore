@@ -118,26 +118,26 @@ export default function AnimatedLayout({
                 </div>
                 <div className="flex gap-4 text-amber-200/70 text-xl">
                   <Link
-                    href="https://instagram.com"
+                    href="https://www.instagram.com/jasonjamesmoore/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-amber-200"
+                    aria-label="Instagram"
                   >
                     <FaInstagram />
                   </Link>
                   <Link
-                    href="https://facebook.com"
+                    href="https://www.facebook.com/jasonjmooresax/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-amber-200"
+                    aria-label="Facebook"
                   >
                     <FaFacebook />
                   </Link>
                   <Link
-                    href="https://twitter.com"
+                    href="https://x.com/JasonJamesMoore"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-amber-200"
+                    aria-label="Twitter"
                   >
                     <FaTwitter />
                   </Link>
@@ -205,30 +205,30 @@ export default function AnimatedLayout({
 
             {/* Center: Social Icons */}
             <div className="flex gap-4 text-xl">
-              <a
-                href="https://instagram.com"
+              <Link
+                href="https://www.instagram.com/jasonjamesmoore/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
               >
                 <FaInstagram />
-              </a>
-              <a
-                href="https://facebook.com"
+              </Link>
+              <Link
+                href="https://www.facebook.com/jasonjmooresax/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
               >
                 <FaFacebook />
-              </a>
-              <a
-                href="https://twitter.com"
+              </Link>
+              <Link
+                href="https://x.com/JasonJamesMoore"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Twitter"
               >
                 <FaTwitter />
-              </a>
+              </Link>
             </div>
 
             {/* Right: CTA Button */}
