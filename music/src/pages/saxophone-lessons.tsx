@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { useEffect, useRef } from "react";
 import Image from "next/image";
 import {
   Tooltip,
@@ -15,21 +14,6 @@ import {
 import { ChevronRight, ChevronDown } from "lucide-react";
 
 export default function LessonsPage() {
-  const embedRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!embedRef.current) return;
-
-    const script = document.createElement("script");
-    script.src = "https://asset-tidycal.b-cdn.net/js/embed.js";
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
   return (
     <>
       <Head>
@@ -94,7 +78,7 @@ export default function LessonsPage() {
         </div>
 
         {/* Accordion Component */}
-        <div className="max-w-5xl mx-auto mt-16 border-t-2 border-b-2 border-neutral-300 py-6">
+        <div className="max-w-5xl mx-auto mt-16 mb-3 border-t-2 border-b-2 border-neutral-300 py-6">
           <Collapsible className="group">
             <TooltipProvider>
               <Tooltip>
@@ -142,10 +126,11 @@ export default function LessonsPage() {
 
         {/* Scheduler Embed */}
         <div className="mt-20 tidycal-embed-wrapper max-w-5xl mx-auto">
-          <div
-            ref={embedRef}
-            className="tidycal-embed"
-            data-path="moorejasonj"
+          <iframe
+            src="https://tidycal.com/moorejasonj"
+            title="Schedule saxophone lessons"
+            className="w-full h-[1000px] border-0"
+            scrolling="no"
           />
         </div>
       </section>

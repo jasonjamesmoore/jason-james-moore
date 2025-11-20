@@ -1,22 +1,6 @@
 import Head from "next/head";
-import { useEffect, useRef } from "react";
 
 export default function ConsultationPage() {
-  const embedRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!embedRef.current) return;
-
-    const script = document.createElement("script");
-    script.src = "https://asset-tidycal.b-cdn.net/js/embed.js";
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
   return (
     <>
       <Head>
@@ -47,10 +31,11 @@ export default function ConsultationPage() {
 
           {/* Right: TidyCal Embed */}
           <div className="w-full lg:w-1/2 max-w-xl overflow-hidden">
-            <div
-              ref={embedRef}
-              className="tidycal-embed"
-              data-path="moorejasonj/15-minute-meeting"
+            <iframe
+              src="https://tidycal.com/moorejasonj/15-minute-meeting"
+              title="Schedule a consultation"
+              className="w-full h-[800px] border-0"
+              scrolling="no"
             />
           </div>
         </div>

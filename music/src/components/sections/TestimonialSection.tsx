@@ -32,24 +32,7 @@ export function TestimonialSection() {
   ];
 
   return (
-    // <div className="w-full max-w-md">
-    //   <Carousel className="w-full">
-    //     <CarouselContent>
-    //       {testimonials.map((t, i) => (
-    //         <CarouselItem key={i} className="text-left px-4">
-    //           <blockquote className="text-base italic leading-relaxed mb-2 text-white">
-    //             “{t.text}”
-    //           </blockquote>
-    //           <p className="text-white text-sm font-medium">— {t.name}</p>
-    //         </CarouselItem>
-    //       ))}
-    //     </CarouselContent>
-    //     <div className="flex justify-start gap-2 mt-4">
-    //       <CarouselPrevious />
-    //       <CarouselNext />
-    //     </div>
-    //   </Carousel>
-    // </div>
+   
     <section className="py-20 px-6 md:px-12 text-foreground">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl md:text-5xl font-bold mb-10">
