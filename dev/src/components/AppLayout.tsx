@@ -173,7 +173,7 @@ export function AppLayout({ children }: AppLayoutProps) {
                 <Github size={20} />
               </Link>
               <Link
-                href="https://linkedin.com/in/jasonjamesmoore"
+                href="https://linkedin.com/in/jason-james-moore"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"

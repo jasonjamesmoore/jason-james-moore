@@ -156,24 +156,34 @@ export default function Home() {
           
           <div className="space-y-12">
             <ExperienceCard
-              startDate="2023"
-              endDate="Present"
+              startDate="2025"
+              endDate="Ongoing Contract"
               title="Full-stack Developer"
-              company="Company Name"
-              description="Brief description of your role and key accomplishments. What you built, technologies you used, and impact you made."
+              company="Tidal Cans"
+              description="Built a multi-step onboarding MVP with Stripe subscription management and seasonal pricing logic. Also worked on infrastructure improvements for an existing application, including security hardening, redeployment, and implementing logging and backup systems. Improvements and additional features in development."
               technologies={["React", "TypeScript", "Node.js"]}
-              link="#"
+              link="https://www.tidalcans.com/"
             />
 
             <ExperienceCard
-              startDate="2020"
-              endDate="2023"
-              title="Previous Role"
-              company="Previous Company"
-              description="Description of responsibilities and achievements in this role."
+              startDate="2023"
+              endDate="Present"
+              title="React Developer & Consultant"
+              company="Conduction"
+              description="Worked with engineers, educators, and designers at a music-education startup to debug timeline features and improve state logic. Proposed architectural patterns adopted across the platform. Developed a marketplace MVP prototype to explore product direction and technical feasibility."
               technologies={["JavaScript", "PostgreSQL"]}
-              link="#"
+              link="https://www.conduction.live/"
             />
+
+            {/* <ExperienceCard
+              startDate="2023"
+              endDate="Present"
+              title="Full-stack Developer"
+              company="Freelance"
+              description="Delivered production applications for onboarding systems, custom quoting tools, and educational platforms. Worked directly with clients to define requirements, architect solutions, and iterate based on feedback."
+              technologies={["React", "TypeScript", "Node.js"]}
+              link="https://dev.jasonjamesmoore.com/"
+            /> */}
           </div>
         </section>
 
@@ -198,13 +208,22 @@ export default function Home() {
               "TypeScript",
               "React",
               "Next.js",
+              "Vite",
+              "Tailwind CSS",
+              "Shadcn UI",
+              "Mantine",
+              "Framer Motion",
               "Node.js",
+              "Express",
               "PostgreSQL",
               "MongoDB",
-              "Tailwind CSS",
-              "Framer Motion",
+              "Prisma",
+              "Stripe",
               "REST APIs",
               "Web Audio",
+              "Zod",
+              "Vercel",
+              "Linux/SSH",
               "Git",
             ].map((tech) => (
               <TechBadge key={tech} name={tech} />
