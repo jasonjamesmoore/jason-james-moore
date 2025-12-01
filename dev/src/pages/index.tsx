@@ -96,7 +96,7 @@ export default function Home() {
     <AppLayout>
       <div className="space-y-24 pb-[50vh]">
         {/* About */}
-        <section id="about" className="space-y-8">
+        <section id="about" className="scroll-mt-24 space-y-8">
           <div className="grid grid-cols-1 gap-2">
             <p className="text-[#9ca3af]">
               I'm a <b className="text-[#fafafa]">software developer and educator</b> based in Wilmington,
@@ -151,7 +151,7 @@ export default function Home() {
         </section>
 
         {/* Experience */}
-        <section id="experience" className="space-y-8">
+        <section id="experience" className="scroll-mt-24 space-y-8">
           <h2 className="text-2xl font-bold text-[#fafafa]">Experience</h2>
           
           <div className="space-y-12">
@@ -178,7 +178,7 @@ export default function Home() {
         </section>
 
         {/* Projects */}
-        <section id="projects" className="space-y-8">
+        <section id="projects" className="scroll-mt-24 space-y-8">
           <h2 className="text-2xl font-bold text-[#fafafa]">
             Selected Projects
           </h2>
@@ -190,7 +190,7 @@ export default function Home() {
         </section>
 
         {/* Tech Stack */}
-        <section id="tech" className="space-y-8">
+        <section id="tech" className="scroll-mt-24 space-y-8">
           <h2 className="text-2xl font-bold text-[#fafafa]">Tech I Use</h2>
           <div className="flex flex-wrap gap-3">
             {[
