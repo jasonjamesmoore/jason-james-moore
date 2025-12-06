@@ -3,9 +3,9 @@ import Link from "next/link";
 import { PiMusicNotesSimpleFill, PiChalkboardTeacherFill } from "react-icons/pi"; // Just examples, swap as needed
 
 
-type SectionProps = {
-  id?: string;
-};
+  type SectionProps = {
+    id?: string;
+  };
 
 export default function OfferSection({ id }: SectionProps) {
   return (

@@ -8,7 +8,7 @@ const projects = [
   {
     title: "Onboarding/Subscription MVP",
     description:
-      "Multi-step user onboarding flow with Stripe payment integration. Validates user data, handles subscription plans, and processes payments securely.",
+      "Built a multi-step onboarding and billing system for a residential service company. Implemented address-based seasonal pricing, Stripe Subscription Schedules with seasonal add-ons, and secure webhook handling for subscription lifecycle events. Designed for future expansion into full admin tools and automated syncing with Postgres.",
     techStack: [
       "Next.js",
       "TypeScript",

@@ -78,7 +78,7 @@ export default function LessonsPage() {
         </div>
 
         {/* Accordion Component */}
-        <div className="max-w-5xl mx-auto mt-16 mb-3 border-t-2 border-b-2 border-neutral-300 py-6">
+        <div className="max-w-5xl mx-auto mt-16 border-t-2 border-b-2 border-neutral-300 py-6">
           <Collapsible className="group">
             <TooltipProvider>
               <Tooltip>
