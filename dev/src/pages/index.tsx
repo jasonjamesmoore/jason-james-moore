@@ -29,7 +29,7 @@ const projects = [
       "Webhook handlers for payment events",
     ],
     githubUrl: "https://github.com/jasonjamesmoore/onboarding-mvp",
-    subdomain: "https://onboarding.jasonjamesmoore.com",
+    subdomain: "https://onboard.jasonjamesmoore.com",
   },
   {
     title: "Music Theory Flashcards",
