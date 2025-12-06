@@ -129,7 +129,7 @@ export default function LessonsPage() {
           <iframe
             src="https://tidycal.com/moorejasonj"
             title="Schedule saxophone lessons"
-            className="w-full h-[1000px] border-0"
+            className="w-full h-[525px] border-0"
             scrolling="no"
           />
         </div>
