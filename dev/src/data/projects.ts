@@ -27,7 +27,7 @@ export const projects = [
     description:
       "Comprehensive flashcard system for music theory with computed music theory concepts (not stored data). Features three deck levels and four unique testing modes to reinforce learning.",
     techStack: ["React", "TypeScript", "Vite", "Tailwind CSS"],
-    status: "Production" as const,
+    status: "In Production" as const,
     whatWorking: [
       "Three difficulty levels (decks)",
       "Four testing modes (recognition, identification, etc.)",
