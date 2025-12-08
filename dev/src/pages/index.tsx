@@ -6,37 +6,50 @@ import { TechBadge } from "@/components/TechBadge";
 // Your project data
 const projects = [
   {
-    title: "Onboarding/Subscription MVP",
+    title: "Subscription Scheduler with Dynamic Pricing",
     description:
-      "Built a multi-step onboarding and billing system for a residential service company. Implemented address-based seasonal pricing, Stripe Subscription Schedules with seasonal add-ons, and secure webhook handling for subscription lifecycle events. Designed for future expansion into full admin tools and automated syncing with Postgres.",
+      "Built a multi-step onboarding and subscription management system for a residential trash valet service. Implemented location-based seasonal pricing using Stripe Subscription Schedules, where subscription costs automatically adjust throughout the year based on each property's seasonal service windows. Features webhook-driven schedule creation, metadata-encoded business rules, and comprehensive invoice previews.\n\n**This portfolio demo mirrors the live production system with a few simplifications.**\n\n",
     techStack: [
-      "Next.js",
-      "TypeScript",
+      "Next.js 15",
+      "TypeScript 5",
+      "React 19",
       "Stripe API",
-      "React Hook Form",
+      "React Hook Form 7",
+      "Zod 4",
       "Tailwind CSS",
+      "shadcn/ui",
     ],
-    status: "MVP" as const,
+    status: "In Production" as const,
     whatWorking: [
-      "Multi-step form with validation",
-      "Stripe payment integration",
-      "User data collection and storage",
-      "Responsive design",
+      "Multi-step form with step-aware Zod validation",
+      "Stripe payment integration with Payment Intents",
+      "Dynamic multi-phase subscription schedule creation",
+      "Location-based service area validation (zip code matching)",
+      "Webhook handlers for subscription lifecycle events",
+      "Real-time invoice preview with phase breakdown",
+      "Per-property seasonal add-on configuration",
+      "Responsive UI with loading states and error handling",
     ],
     whatNext: [
-      "Email confirmation flow",
-      "Subscription management dashboard",
-      "Webhook handlers for payment events",
+      "User authentication and account management",
+      "Admin dashboard for subscription oversight",
+      "Postgres integration for customer data persistence and contractor app consumption",
+      "Customer self-service portal (pause/cancel/modify)",
+      "Email notifications for seasonal phase transitions",
+      "Analytics dashboard for revenue forecasting",
+      "Automated testing suite (unit + integration)",
+      "Rate limiting and abuse prevention",
     ],
-    githubUrl: "https://github.com/jasonjamesmoore/onboarding-mvp",
+    githubUrl: "https://github.com/jasonjamesmoore/Stripe-Schedule-Onboarding",
     subdomain: "https://onboard.jasonjamesmoore.com",
+    slug: "onboarding-subscription-mvp",
   },
   {
     title: "Music Theory Flashcards",
     description:
       "Interactive flashcard app for learning music theory concepts. Production-ready with clean UI and smooth animations.",
     techStack: ["React", "TypeScript", "Framer Motion", "CSS Grid"],
-    status: "Production" as const,
+    status: "In Production" as const,
     whatWorking: [
       "Multiple flashcard decks",
       "Flip animations",
@@ -99,28 +112,37 @@ export default function Home() {
         <section id="about" className="scroll-mt-24 space-y-8">
           <div className="grid grid-cols-1 gap-2">
             <p className="text-[#9ca3af]">
-              I'm a <b className="text-[#fafafa]">software developer and educator</b> based in Wilmington,
-              NC, specializing in building clear, reliable tools that make
-              complex workflows feel simple. A long-time music educator and
-              professional saxophonist, I’ve transitioned into software
-              engineering where I bring the same curiosity, focus, and
+              I'm a{" "}
+              <b className="text-[#fafafa]">software developer and educator</b>{" "}
+              based in Wilmington, NC, specializing in building clear, reliable
+              tools that make complex workflows feel simple. A long-time music
+              educator and professional saxophonist, I’ve transitioned into
+              software engineering where I bring the same curiosity, focus, and
               communication skills that defined my earlier career.
             </p>
             <p className="text-[#9ca3af]">
-              I work primarily with <b className="text-[#fafafa]">React</b>, <b className="text-[#fafafa]">Next.js</b>,{" "}
-              <b className="text-[#fafafa]">TypeScript</b>, <b className="text-[#fafafa]">Postgres/Supabase</b>, and <b className="text-[#fafafa]">Stripe</b>, and
-              I love designing user interfaces that are easy to understand but
-              powerful under the hood. I've built production-ready systems for
-              startups, small businesses, and freelance clients—everything from{" "}
-              <b className="text-[#fafafa]">multi-step onboarding flows</b> with <b className="text-[#fafafa]">subscription logic</b>{" "}
-              to <b className="text-[#fafafa]">internal tools</b> and <b className="text-[#fafafa]">custom quoting applications</b>.
+              I work primarily with <b className="text-[#fafafa]">React</b>,{" "}
+              <b className="text-[#fafafa]">Next.js</b>,{" "}
+              <b className="text-[#fafafa]">TypeScript</b>,{" "}
+              <b className="text-[#fafafa]">Postgres/Supabase</b>, and{" "}
+              <b className="text-[#fafafa]">Stripe</b>, and I love designing
+              user interfaces that are easy to understand but powerful under the
+              hood. I've built production-ready systems for startups, small
+              businesses, and freelance clients—everything from{" "}
+              <b className="text-[#fafafa]">multi-step onboarding flows</b> with{" "}
+              <b className="text-[#fafafa]">subscription logic</b> to{" "}
+              <b className="text-[#fafafa]">internal tools</b> and{" "}
+              <b className="text-[#fafafa]">custom quoting applications</b>.
             </p>
             <p className="text-[#9ca3af]">
               I care deeply about clean architecture, thoughtful UX, and
               building software that holds up in real-world use. Whether
               collaborating with a team or working independently, I focus on
-              creating tools that <b className="text-[#fafafa]">solve real problems for real people</b>,
-              built with a methodical, detail-driven engineering mindset and a
+              creating tools that{" "}
+              <b className="text-[#fafafa]">
+                solve real problems for real people
+              </b>
+              , built with a methodical, detail-driven engineering mindset and a
               commitment to continuous learning.
             </p>
           </div>
@@ -153,7 +175,7 @@ export default function Home() {
         {/* Experience */}
         <section id="experience" className="scroll-mt-24 space-y-8">
           <h2 className="text-2xl font-bold text-[#fafafa]">Experience</h2>
-          
+
           <div className="space-y-12">
             <ExperienceCard
               startDate="2025"
