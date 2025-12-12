@@ -27,9 +27,11 @@ export function CaseStudyLayout({ children }: CaseStudyLayoutProps) {
               {/* Intro */}
               <div className="space-y-6">
                 <div className="space-y-3">
-                  <h1 className="text-4xl font-bold text-[#fafafa] leading-none sm:text-5xl">
-                    Jason James Moore
-                  </h1>
+                  <Link href="/" className="inline-block">
+                    <h1 className="text-4xl font-bold text-[#fafafa] leading-none sm:text-5xl">
+                      Jason James Moore
+                    </h1>
+                  </Link>
                   <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
                     Full-stack developer
                   </h2>
@@ -61,7 +63,9 @@ export function CaseStudyLayout({ children }: CaseStudyLayoutProps) {
                 >
                   <span
                     className={`text-xs text-[#fb923c] transition-opacity duration-300 ${
-                      activeSection === "challenge" ? "opacity-100" : "opacity-0"
+                      activeSection === "challenge"
+                        ? "opacity-100"
+                        : "opacity-0"
                     }`}
                   >
                     ▹
@@ -87,9 +91,7 @@ export function CaseStudyLayout({ children }: CaseStudyLayoutProps) {
                 >
                   <span
                     className={`text-xs text-[#fb923c] transition-opacity duration-300 ${
-                      activeSection === "approach"
-                        ? "opacity-100"
-                        : "opacity-0"
+                      activeSection === "approach" ? "opacity-100" : "opacity-0"
                     }`}
                   >
                     ▹
