@@ -85,44 +85,44 @@ const projects = [
     subdomain: "https://practice.jasonjamesmoore.com", 
     slug: "practicekit-music-theory",
   },
-  {
-    title: "Face Detection App",
-    description:
-      "Real-time face detection using Clarifai API. Upload images and get instant facial recognition results.",
-    techStack: ["React", "Node.js", "Clarifai API", "PostgreSQL"],
-    status: "In Progress" as const,
-    whatWorking: [
-      "Image upload functionality",
-      "Face detection API integration",
-      "Bounding box visualization",
-    ],
-    whatNext: [
-      "User authentication",
-      "Image history/gallery",
-      "Batch processing",
-      "Deploy to production",
-    ],
-    githubUrl: "https://github.com/jasonjamesmoore/face-detection",
-  },
-  {
-    title: "Musician's Practice Notebook",
-    description:
-      "Digital practice journal for tracking rehearsal sessions, goals, and progress over time.",
-    techStack: ["Next.js", "MongoDB", "TypeScript", "Tailwind CSS"],
-    status: "In Progress" as const,
-    whatWorking: [
-      "Session logging",
-      "Basic note-taking",
-      "Date-based organization",
-    ],
-    whatNext: [
-      "Goal tracking features",
-      "Analytics/insights",
-      "Audio recording integration",
-      "Export to PDF",
-    ],
-    githubUrl: "https://github.com/jasonjamesmoore/practice-notebook",
-  },
+  // {
+  //   title: "Face Detection App",
+  //   description:
+  //     "Real-time face detection using Clarifai API. Upload images and get instant facial recognition results.",
+  //   techStack: ["React", "Node.js", "Clarifai API", "PostgreSQL"],
+  //   status: "In Progress" as const,
+  //   whatWorking: [
+  //     "Image upload functionality",
+  //     "Face detection API integration",
+  //     "Bounding box visualization",
+  //   ],
+  //   whatNext: [
+  //     "User authentication",
+  //     "Image history/gallery",
+  //     "Batch processing",
+  //     "Deploy to production",
+  //   ],
+  //   githubUrl: "https://github.com/jasonjamesmoore/face-detection",
+  // },
+  // {
+  //   title: "Musician's Practice Notebook",
+  //   description:
+  //     "Digital practice journal for tracking rehearsal sessions, goals, and progress over time.",
+  //   techStack: ["Next.js", "MongoDB", "TypeScript", "Tailwind CSS"],
+  //   status: "In Progress" as const,
+  //   whatWorking: [
+  //     "Session logging",
+  //     "Basic note-taking",
+  //     "Date-based organization",
+  //   ],
+  //   whatNext: [
+  //     "Goal tracking features",
+  //     "Analytics/insights",
+  //     "Audio recording integration",
+  //     "Export to PDF",
+  //   ],
+  //   githubUrl: "https://github.com/jasonjamesmoore/practice-notebook",
+  // },
 ];
 
 export default function Home() {
