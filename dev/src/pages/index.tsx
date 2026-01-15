@@ -82,28 +82,9 @@ const projects = [
       "MIDI keyboard input support",
     ],
     githubUrl: "https://github.com/jasonjamesmoore/TheoryFlashCards",
-    subdomain: "https://practice.jasonjamesmoore.com", 
+    subdomain: "https://practice.jasonjamesmoore.com",
     slug: "practicekit-music-theory",
   },
-  // {
-  //   title: "Face Detection App",
-  //   description:
-  //     "Real-time face detection using Clarifai API. Upload images and get instant facial recognition results.",
-  //   techStack: ["React", "Node.js", "Clarifai API", "PostgreSQL"],
-  //   status: "In Progress" as const,
-  //   whatWorking: [
-  //     "Image upload functionality",
-  //     "Face detection API integration",
-  //     "Bounding box visualization",
-  //   ],
-  //   whatNext: [
-  //     "User authentication",
-  //     "Image history/gallery",
-  //     "Batch processing",
-  //     "Deploy to production",
-  //   ],
-  //   githubUrl: "https://github.com/jasonjamesmoore/face-detection",
-  // },
   // {
   //   title: "Musician's Practice Notebook",
   //   description:
@@ -186,7 +167,7 @@ export default function Home() {
                 <span className="text-[#10b981] mr-3">▹</span>
                 <span>
                   Especially interested in work involving React, TypeScript,
-                  Next.js, or building product workflows end-to-end
+                  Next.js, Sanity.io, or building product workflows end-to-end
                 </span>
               </li>
             </ul>
@@ -204,7 +185,13 @@ export default function Home() {
               title="Full-stack Developer"
               company="Tidal Cans"
               description="Built a multi-step onboarding MVP with Stripe subscription management and seasonal pricing logic. Also worked on infrastructure improvements for an existing application, including security hardening, redeployment, and implementing logging and backup systems. Improvements and additional features in development."
-              technologies={["React", "TypeScript", "Node.js"]}
+              technologies={[
+                "React",
+                "TypeScript",
+                "Node.js",
+                "Stripe API",
+                "Shadcn/ui",
+              ]}
               link="https://www.tidalcans.com/"
             />
 
@@ -214,19 +201,9 @@ export default function Home() {
               title="React Developer & Consultant"
               company="Conduction"
               description="Worked with engineers, educators, and designers at a music-education startup to debug timeline features and improve state logic. Proposed architectural patterns adopted across the platform. Developed a marketplace MVP prototype to explore product direction and technical feasibility."
-              technologies={["JavaScript", "PostgreSQL"]}
+              technologies={["JavaScript", "PostgreSQL", "React", "Mantine"]}
               link="https://www.conduction.live/"
             />
-
-            {/* <ExperienceCard
-              startDate="2023"
-              endDate="Present"
-              title="Full-stack Developer"
-              company="Freelance"
-              description="Delivered production applications for onboarding systems, custom quoting tools, and educational platforms. Worked directly with clients to define requirements, architect solutions, and iterate based on feedback."
-              technologies={["React", "TypeScript", "Node.js"]}
-              link="https://dev.jasonjamesmoore.com/"
-            /> */}
           </div>
         </section>
 
@@ -251,23 +228,17 @@ export default function Home() {
               "TypeScript",
               "React",
               "Next.js",
-              "Vite",
+              "Node.js",
+              "Supabase",
+              "PostgreSQL",
+              "Sanity.io",
+              "Stripe API",
+              "REST APIs",
+              "Git",
               "Tailwind CSS",
-              "Shadcn UI",
+              "shadcn/ui",
               "Mantine",
               "Framer Motion",
-              "Node.js",
-              "Express",
-              "PostgreSQL",
-              "MongoDB",
-              "Prisma",
-              "Stripe",
-              "REST APIs",
-              "Web Audio",
-              "Zod",
-              "Vercel",
-              "Linux/SSH",
-              "Git",
             ].map((tech) => (
               <TechBadge key={tech} name={tech} />
             ))}
