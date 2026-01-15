@@ -25,7 +25,7 @@ export default function About() {
           <section className="space-y-6 border-t border-[rgba(136,146,176,0.1)] pt-16">
             <h2 className="text-[#ccd6f6]">Tech I Use</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              {["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "PostgreSQL", "MongoDB", "Tailwind CSS", "Framer Motion", "REST APIs", "Web Audio", "Git"].map((tech) => (
+              {["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Supabase", "PostgreSQL", "Sanity.io", "Stripe API", "REST APIs", "Git", "Tailwind CSS", "shadcn/ui", "Mantine", "Framer Motion"].map((tech) => (
                 <div key={tech} className="px-4 py-2 border border-[rgba(136,146,176,0.3)] rounded text-[#8892b0] text-sm font-mono">
                   {tech}
                 </div>
