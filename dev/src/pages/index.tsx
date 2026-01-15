@@ -176,7 +176,7 @@ export default function Home() {
 
         {/* Experience */}
         <section id="experience" className="scroll-mt-24 space-y-8">
-          <h2 className="text-2xl font-bold text-[#fafafa]">Experience</h2>
+          <h2 className="text-2xl font-bold text-[#fafafa]">Selected Experience</h2>
 
           <div className="space-y-12">
             <ExperienceCard
