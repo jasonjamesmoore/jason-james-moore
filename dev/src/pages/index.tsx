@@ -157,17 +157,20 @@ export default function Home() {
             <ul className="space-y-2 text-[#9ca3af]">
               <li className="flex items-start">
                 <span className="text-[#10b981] mr-3">▹</span>
-                <span>Seeking a full-time software engineering role</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-[#10b981] mr-3">▹</span>
-                <span>Also available for contract and freelance projects</span>
+                <span>
+                  Working with teams on modern React and Next.js applications
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="text-[#10b981] mr-3">▹</span>
                 <span>
-                  Especially interested in work involving React, TypeScript,
-                  Next.js, Sanity.io, or building product workflows end-to-end
+                  Open to contract, freelance, or long-term collaborations
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#10b981] mr-3">▹</span>
+                <span>
+                  Interested in building clear, durable product workflows end-to-end
                 </span>
               </li>
             </ul>
@@ -176,7 +179,9 @@ export default function Home() {
 
         {/* Experience */}
         <section id="experience" className="scroll-mt-24 space-y-8">
-          <h2 className="text-2xl font-bold text-[#fafafa]">Selected Experience</h2>
+          <h2 className="text-2xl font-bold text-[#fafafa]">
+            Selected Experience
+          </h2>
 
           <div className="space-y-12">
             <ExperienceCard
